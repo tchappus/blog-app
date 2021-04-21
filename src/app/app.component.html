@@ -1,0 +1,14 @@
+<div class="tabs">
+  <tabset>
+    <tab *ngFor="let tab of tabs"
+         [heading]="tab.title"
+         [active]="tab.active"
+         (selectTab)="selectTabHandler(tab)"
+         (deselect)="tab.active = false"
+         [disabled]="tab.disabled"
+         [removable]="tab.removable"
+         (removed)="removeTabHandler(tab)">
+    </tab>
+  </tabset>
+  <router-outlet></router-outlet>
+</div>
